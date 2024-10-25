@@ -41,7 +41,7 @@ class Screen:
 class SoundManager:
     def __init__(self):
         pygame.mixer.init()
-        pygame.mixer.music.load("sound\melody_bgm.mp3")
+        pygame.mixer.music.load("sound/melody_bgm.mp3")
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(.5)
 
@@ -53,7 +53,7 @@ class SoundManager:
         pygame.mixer.music.stop()
 
     def start_music(self):
-        pygame.mixer.music.load("sound\melody_bgm.mp3")
+        pygame.mixer.music.load("sound/melody_bgm.mp3")
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(.5)
 
@@ -151,7 +151,7 @@ class SnakeGame:
         x = random.randint(-435, 435)
         y = random.randint(-300, 265)
         self.food.goto(x, y)
-        self.sound_manager.play_sound("sound\generating_food.wav")
+        self.sound_manager.play_sound("sound/generating_food.wav")
 
     def create_block(self):
         block = turtle.Turtle()
@@ -186,7 +186,7 @@ class SnakeGame:
     def game_over(self):
         self.score_manager.save_high_score()
         self.sound_manager.stop_music()
-        self.sound_manager.play_sound("sound\lose_or_failure.wav")
+        self.sound_manager.play_sound("sound/lose_or_failure.wav")
         time.sleep(4)
         self.head.goto(0, 0)
         self.head.direction = "stop"
@@ -253,7 +253,7 @@ class SnakeGame:
                 self.level = 2
                 self.delay = 30
                 if self.count == 1:
-                    self.sound_manager.play_sound("sound\entered_next_level.wav")
+                    self.sound_manager.play_sound("sound/entered_next_level.wav")
                     self.count += 1
                 self.screen.wn.bgcolor('#A3B8B1')
                 self.border_collision()
@@ -265,7 +265,7 @@ class SnakeGame:
                 self.level = 3
                 self.delay = 40
                 if self.count == 2:
-                    self.sound_manager.play_sound("sound\entered_next_level.wav")
+                    self.sound_manager.play_sound("sound/entered_next_level.wav")
                     self.count += 1
                 self.screen.wn.bgcolor('#E1C4AB')
                 self.border_collision()
@@ -280,7 +280,7 @@ class SnakeGame:
                 self.level = 4
                 self.delay = 45
                 if self.count == 3:
-                    self.sound_manager.play_sound("sound\entered_next_level.wav")
+                    self.sound_manager.play_sound("sound/entered_next_level.wav")
                     self.create_wall()
                     self.count += 1
                 self.screen.wn.bgcolor("#E6EFF6")
@@ -297,7 +297,7 @@ class SnakeGame:
                 self.level = 5
                 self.delay = 50
                 if self.count == 4:
-                    self.sound_manager.play_sound("sound\entered_next_level.wav")
+                    self.sound_manager.play_sound("sound/entered_next_level.wav")
                     self.create_wall()
                     self.count += 1
                 self.screen.wn.bgcolor("#C4D15B")
